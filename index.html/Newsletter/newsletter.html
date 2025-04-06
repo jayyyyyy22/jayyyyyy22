@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Newsletter - The Flour House</title>
+    <style>
+        /* Main Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf3;
+            color: #5a3e2b;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #d3a15c;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 4px solid #b5884d;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 15px 0 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        /* Newsletter Header */
+        .newsletter-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .newsletter-header h1 {
+            color: #d3a15c;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .newsletter-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Newsletter Content */
+        .newsletter-content {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .newsletter-hero {
+            background: linear-gradient(to right, #ffe0b2, #ffcc80);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid #d3a15c;
+        }
+        
+        .newsletter-hero h2 {
+            color: #5a3e2b;
+            margin-top: 0;
+        }
+        
+        .newsletter-issue {
+            font-weight: bold;
+            color: #d3a15c;
+            letter-spacing: 1px;
+        }
+        
+        .newsletter-body {
+            padding: 30px;
+        }
+        
+        .newsletter-section {
+            margin-bottom: 40px;
+        }
+        
+        .newsletter-section h3 {
+            color: #d3a15c;
+            border-bottom: 2px solid #f5deb3;
+            padding-bottom: 8px;
+            font-size: 1.5rem;
+        }
+        
+        .recipe-card, .product-spotlight {
+            background: #fff8e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #d3a15c;
+        }
+        
+        .recipe-card h4, .product-spotlight h4 {
+            margin-top: 0;
+            color: #5a3e2b;
+        }
+        
+        .recipe-image, .product-image {
+            float: right;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-left: 20px;
+            border: 3px solid #f5deb3;
+        }
+        
+        /* Subscription Form */
+        .subscribe-section {
+            background: #f5deb3;
+            padding: 30px;
+            text-align: center;
+            border-top: 3px solid #d3a15c;
+        }
+        
+        .subscribe-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .subscribe-btn {
+            background-color: #d3a15c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .subscribe-btn:hover {
+            background-color: #b5884d;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .recipe-image, .product-image {
+                float: none;
+                display: block;
+                margin: 0 auto 15px;
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+            
+            .newsletter-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" style="font-size: 1.8rem; font-weight: bold; color: white;">🥖 The Flour House</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="newsletter-header">
+            <h1>The Flour House Newsletter</h1>
+            <p>Fresh baking tips, seasonal recipes, and exclusive offers delivered to your inbox</p>
+        </div>
+        
+        <div class="newsletter-content">
+            <div class="newsletter-hero">
+                <span class="newsletter-issue">APRIL 2025 EDITION</span>
+                <h2>Spring Baking Special</h2>
+                <p>Celebrating the flavors of the season with fresh ingredients and warm traditions</p>
+            </div>
+            
+            <div class="newsletter-body">
+                <div class="newsletter-section">
+                    <h3>Baker's Corner</h3>
+                    <p>Welcome to our April newsletter! As the flowers bloom, we're excited to share our spring-inspired creations with you. This month we're featuring:</p>
+                    <ul>
+                        <li>New seasonal menu items</li>
+                        <li>Upcoming baking workshops</li>
+                        <li>A special lemon-blueberry recipe</li>
+                        <li>Spotlight on our sourdough starter program</li>
+                    </ul>
+                </div>
+                
+                <div class="newsletter-section">
+                    <h3>Recipe of the Month</h3>
+                    <div class="recipe-card">
+                        <img src="Lemon Blueberry Loaf.jpeg" alt="Lemon Blueberry Loaf" class="recipe-image">
+                        <h4>Lemon Blueberry Loaf</h4>
+                        <p>Our bright and cheerful spring specialty combines tart lemon with sweet blueberries in a moist, tender loaf.</p>
+                        <h5>Ingredients:</h5>
+                        <ul>
+                            <li>2 cups all-purpose flour</li>
+                            <li>1 cup fresh blueberries</li>
+                            <li>Zest of 2 lemons</li>
+                            <li>1/2 cup unsalted butter, softened</li>
+                            <li>3/4 cup sugar</li>
+                        </ul>
+                        <p><strong>Tip:</strong> Toss blueberries in flour before adding to batter to prevent sinking!</p>
+                    </div>
+                </div>
+                
+                <div class="newsletter-section">
+                    <h3>Product Spotlight</h3>
+                    <div class="product-spotlight">
+                        <img src="Spring Celebration Cookie Box.jpeg" alt="Spring Cookie Box" class="product-image">
+                        <h4>Spring Celebration Cookie Box</h4>
+                        <p>Our limited edition cookie box features six flower-inspired cookies decorated with edible petals and spring colors. Perfect for Easter gatherings or spring celebrations!</p>
+                        <p><strong>Available April 1-30</strong> | <em>Pre-order for 10% off</em></p>
+                    </div>
+                </div>
+                
+                <div class="newsletter-section">
+                    <h3>Upcoming Events</h3>
+                    <p><strong>April 15:</strong> Sourdough Starter Workshop (10am-12pm)</p>
+                    <p><strong>April 22:</strong> Easter Bread Decorating Class (2pm-4pm)</p>
+                    <p><strong>Every Saturday:</strong> Fresh strawberry shortcakes available</p>
+                </div>
+            </div>
+            
+            <div class="subscribe-section">
+                <h3>Never Miss an Update</h3>
+                <p>Subscribe to receive our monthly newsletter with recipes, tips, and special offers</p>
+                
+                <form class="subscribe-form" id="newsletter-signup">
+                    <div class="form-group">
+                        <label for="subscriber-name">Your Name</label>
+                        <input type="text" id="subscriber-name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subscriber-email">Email Address</label>
+                        <input type="email" id="subscriber-email" name="email" required>
+                    </div>
+                    
+                    <button type="submit" class="subscribe-btn">Subscribe Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 The Flour House Bakery | 123 Bakery Lane | (123) 456-7890</p>
+        <p>Want to change how you receive these emails?<br>
+        <a href="#" style="color: #f5deb3;">Update preferences</a> or <a href="#" style="color: #f5deb3;">unsubscribe</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('newsletter-signup').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('subscriber-email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            alert('Thank you for subscribing to our newsletter! You\'ll receive our next edition soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

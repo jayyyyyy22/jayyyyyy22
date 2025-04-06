@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Flour House</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            color: #4e342e;
+            background-color: #fffaf3;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        header {
+            background-color: #f5deb3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #4e342e;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: white;
+            background-color: #d2691e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .page-hero {
+            background: linear-gradient(to right, #ffe0b2, #ffcc80);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 4px solid #d2691e;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .page-hero h1:hover {
+            transform: scale(1.02);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        .team-member {
+            max-width: 220px;
+            text-align: center;
+            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #d2691e;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .team-member:hover img {
+            transform: scale(1.05);
+            border-color: #ff9800;
+        }
+        .team-member h3 {
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        .team-member:hover h3 {
+            color: #d2691e;
+        }
+        footer {
+            background-color: #d2691e;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-header h2 {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .section-header h2:hover {
+            transform: scale(1.05);
+            color: #d2691e;
+        }
+        .section-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        /* Founder Section Styles */
+        .founder-section {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #fff8e1;
+        }
+        .founder-container {
+            max-width: 800px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+        .founder-container:hover {
+            transform: scale(1.01);
+        }
+        .founder-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #d2691e;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .founder-image:hover {
+            transform: rotate(5deg) scale(1.05);
+            border-color: #ff9800;
+        }
+        .founder-title {
+            font-family: 'Playfair Display', serif;
+            color: #4e342e;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .founder-title:hover {
+            color: #d2691e;
+        }
+        .founder-subtitle {
+            color: #d2691e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .founder-subtitle:hover {
+            letter-spacing: 2px;
+        }
+        .founder-bio {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #5a3e2b;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .history-image {
+            max-width: 90%;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            border: 3px solid #f5deb3;
+            transition: all 0.3s ease;
+        }
+        .history-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        footer p {
+            transition: all 0.3s ease;
+        }
+        footer p:hover {
+            transform: scale(1.02);
+            color: #ffe0b2;
+        }
+        /* Newsletter Styles */
+        .newsletter-section {
+            background-color: #d2691e;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .newsletter-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .newsletter-section h2:hover {
+            transform: scale(1.03);
+        }
+        .newsletter-section p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .newsletter-form input {
+            padding: 12px 15px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+        }
+        .newsletter-form button {
+            background-color: #4e342e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .newsletter-form button:hover {
+            background-color: #3e2723;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo" style="font-size: 1.5rem; font-weight: bold; transition: all 0.3s ease;">🥖 The Flour House</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#history">Our Story</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Our Baking Story</h1>
+        <p>From humble beginnings to your favorite neighborhood bakery</p>
+    </section>
+
+    <section id="history">
+        <div class="section-header">
+            <h2>Established in 2020</h2>
+        </div>
+        <div class="section-content">
+            <p>What started as a home baking experiment during the 2020 lockdown soon turned into a community favorite. With a small oven and big dreams, The Flour House began by serving friends and neighbors. Today, we're proud to bake fresh, flavorful goods every single day — still using the same passion that started it all.</p>
+            <img src="Location.jpeg" alt="Our original small bakery location" class="history-image">
+        </div>
+    </section>
+
+    <section id="maker" class="founder-section">
+        <div class="founder-container">
+            <img src="Founder.jpeg" alt="Founder Jayanne Kennedy" class="founder-image">
+            <h2 class="founder-title">Jayanne Kennedy</h2>
+            <p class="founder-subtitle">Founder and Head Baker</p>
+            <div class="founder-bio">
+                <p>What started as weekend experimentation turned into a passion-fueled journey into the world of artisanal baking. Self-taught, endlessly curious, and deeply rooted in tradition, Jayanne brings warmth to everything she does — from perfecting the crumb on a rye loaf to curating community bake-alongs.</p>
+                <p>Her philosophy of "slow baking with fast love" has become the foundation of The Flour House, where every creation tells a story of patience, craftsmanship, and joy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="story">
+        <div class="section-header">
+            <h2>Our Story</h2>
+        </div>
+        <div class="section-content">
+            <p>It all started with a bag of flour and a whole lot of love. In the early months of 2020, while the world paused, our founder Jayanne Kennedy found comfort in the rhythm of baking. What began as a personal escape soon became a neighborhood obsession — friends and family couldn't get enough of her warm sourdough and golden croissants. By the end of that year, The Flour House opened its doors as a cozy corner bakery with a big heart.</p>
+            <p>Since then, we've grown into a beloved bakery known for artisanal craftsmanship, friendly service, and mouthwatering treats that bring people together. Our goal has always been simple: make people feel at home with every bite.</p>
+        </div>
+    </section>
+
+    <section id="team" style="background-color: #fff8e1;">
+        <div class="section-header">
+            <h2>Meet Our Bakers</h2>
+        </div>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="John.jpeg" alt="Head Baker John">
+                <h3>John Smith</h3>
+                <p>Head Baker, Sourdough Specialist</p>
+            </div>
+            <div class="team-member">
+                <img src="Sara.jpeg" alt="Pastry Chef Sara">
+                <h3>Sara Lee</h3>
+                <p>Pastry Chef, Croissant Queen</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" style="background-color: #fff8e1;">
+        <div class="section-header">
+            <h2>Our Baking Philosophy</h2>
+        </div>
+        <div class="section-content">
+            <p>We believe baking is both an art and a science — and that every good bake starts with intention. That's why we focus on small batches, long fermentations, and natural ingredients. No shortcuts, no preservatives, no compromise. We source our flour from trusted local mills, use farm-fresh butter and eggs, and take our time with every recipe.</p>
+            <p>From our 24-hour sourdough loaves to our flaky pastries, everything is made in-house, by hand, with patience and pride. Because food tastes better when it's made with love.</p>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="newsletter-container">
+            <h2>Join Our Sweet Newsletter</h2>
+            <p>Get exclusive recipes and discounts delivered to your inbox!</p>
+            <form class="newsletter-form" id="about-newsletter-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>📍 Visit Us: 123 Bakery Lane | 📞 Call: 1 (868) 123-4567 | 📧 Email: jayannekennedy@gmail.com</p>
+        <p>&copy; 2025 The Flour House. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Newsletter form submission
+        document.getElementById('about-newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter! You\'ll receive exclusive recipes and discounts soon. 🎉');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
